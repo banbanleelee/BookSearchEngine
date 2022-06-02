@@ -22,7 +22,7 @@ const SavedBooks = () => {
       const response = await removeBook({ variables: { bookId: bookId } });
   
       setUserState({ ...response.data.removeBook }); 
-      removeBookId(bookId); // update local storage
+      removeBookId(bookId); 
     } catch (err) {
       console.error(err);
     } 

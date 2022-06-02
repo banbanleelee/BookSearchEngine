@@ -15,8 +15,7 @@ class AuthService {
     return !!token && !this.isTokenExpired(token); // handwaiving here
   }
 
-  // check if token is expired
-  isTokenExpired(token) {
+  isTokenExpired(token) { // check if token is expired
     try {
       const decoded = decode(token);
       if (decoded.exp < Date.now() / 1000) {
@@ -27,22 +26,18 @@ class AuthService {
     }
   }
 
-  getToken() {
-    // Retrieves the user token from localStorage
+  getToken() { // Retrieves the user token from localStorage
     return localStorage.getItem('id_token');
   }
 
-  login(idToken) {
-    // Saves user token to localStorage
+  login(idToken) { // Saves user token to localStorage and reload the page
     localStorage.setItem('id_token', idToken);
     window.location.assign('/');
   }
 
-  logout() {
-    // Clear user token and profile data from localStorage
+  logout() { // Clear user token and profile data from localStorage
     localStorage.removeItem('id_token');
-    // this will reload the page and reset the state of the application
-    window.location.assign('/');
+    window.location.assign('/'); // reload the page and reset the state of the application
   }
 }
 
