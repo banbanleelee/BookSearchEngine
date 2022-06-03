@@ -50,7 +50,7 @@ After-login Search Result Page: user will see more options
 ![save](./assets/images/savedbooks.PNG)
 
 ```md 
-Delete function: users delete unwanted books too
+Delete function: users can delete unwanted books too
 ```
 
 ![comment](./assets/images/afterdeletion.PNG)
